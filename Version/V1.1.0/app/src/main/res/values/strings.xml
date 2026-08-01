@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">电视自动播放器</string>
+    <string name="open_settings">功能设置</string>
+    <string name="playback_failed">无法播放该视频</string>
+    <string name="playback_error_detail">播放器错误：%1$s。可重试或选择其他视频。</string>
+    <string name="retry">重试播放</string>
+    <string name="settings_key_hint">播放中按遥控器“返回”或“菜单”键可进入设置</string>
+    <string name="settings_title">功能设置</string>
+    <string name="not_selected">尚未选择</string>
+    <string name="unknown_video_name">已选择的视频</string>
+    <string name="auto_start">电视开机后自动启动播放</string>
+    <string name="auto_start_description">部分电视还需在系统设置中允许本应用“自启动”和“后台运行”。</string>
+    <string name="sound_on">声音：开启</string>
+    <string name="sound_off">声音：关闭</string>
+    <string name="scale_fit">画面：完整显示</string>
+    <string name="scale_zoom">画面：裁切铺满</string>
+    <string name="scale_description">完整显示不会裁切；裁切铺满可消除黑边。</string>
+    <string name="clear">清除</string>
+    <string name="cancel">取消</string>
+    <string name="back_to_player">返回播放</string>
+    <string name="remote_hint">遥控器提示：播放界面按“返回 / 菜单 / 设置”键即可再次进入本页。</string>
+    <string name="supported_formats_hint">支持 MP4、MKV、WebM、MPEG-TS 等常见容器；最终能否播放取决于电视芯片支持的音视频编码。</string>
+    <string name="invalid_video_selection">没有取得有效的视频文件，请重新选择。</string>
+    <string name="persist_permission_failed">电视文件管理器未授予长期读取权限，请换用系统文件选择器或重新选择。</string>
+    <string name="file_picker_unavailable">这台电视没有可用的系统文件选择器，请先安装文件管理器。</string>
+    <string name="playlist_empty_title">选择视频开始播放</string>
+    <string name="no_playlist_selected">首次使用可一次选择多个视频；应用会记住播放列表，并按顺序循环播放。</string>
+    <string name="playlist_permission_lost">播放列表中的视频已被移动、删除或授权失效，请重新选择。</string>
+    <string name="choose_videos">选择视频</string>
+    <string name="selected_playlist_label">当前播放列表</string>
+    <string name="selected_video_count">共 %1$d 个视频</string>
+    <string name="replace_playlist">重新选择播放列表</string>
+    <string name="append_videos">追加视频</string>
+    <string name="clear_playlist">清空播放列表</string>
+    <string name="clear_playlist_title">清空播放列表？</string>
+    <string name="clear_playlist_message">清空后，下次打开会重新要求选择视频；原始视频文件不会被删除。</string>
+    <string name="playlist_selection_partial">已加入 %1$d 个视频，另有 %2$d 个文件无法取得长期读取权限。</string>
+    <plurals name="unreadable_videos_skipped">
+        <item quantity="one">已跳过 %1$d 个无法读取的视频。</item>
+        <item quantity="other">已跳过 %1$d 个无法读取的视频。</item>
+    </plurals>
+</resources>

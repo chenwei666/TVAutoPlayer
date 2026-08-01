@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <!-- API 37 is announced but not available in the stable SDK repository as of 2026-08-01. -->
+    <issue id="OldTargetApi" severity="ignore" />
+    <issue id="GradleDependency" severity="ignore" />
+    <!-- AGP 9.2.1 officially defaults to Gradle 9.4.1; keep the validated pair. -->
+    <issue id="AndroidGradlePluginVersion" severity="ignore" />
+</lint>

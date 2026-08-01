@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#08111F</color>
+    <color name="panel">#E6162233</color>
+    <color name="primary">#2DD4BF</color>
+    <color name="primary_dark">#0F766E</color>
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#FFB8C4D6</color>
+    <color name="danger">#FFF87171</color>
+</resources>
