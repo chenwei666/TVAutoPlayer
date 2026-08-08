@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_horizontal_margin">24dp</dimen>
+    <dimen name="panel_padding">28dp</dimen>
+    <dimen name="settings_horizontal_padding">24dp</dimen>
+    <dimen name="settings_vertical_padding">20dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="button_text_size">18sp</dimen>
+    <dimen name="title_text_size">28sp</dimen>
+    <dimen name="value_text_size">20sp</dimen>
+</resources>
