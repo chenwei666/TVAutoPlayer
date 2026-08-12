@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/player_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"
+        app:auto_show="false"
+        app:show_buffering="when_playing"
+        app:show_timeout="5000"
+        app:use_controller="true" />
+
+    <LinearLayout
+        android:id="@+id/empty_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/screen_horizontal_margin"
+        android:layout_marginEnd="@dimen/screen_horizontal_margin"
+        android:background="@drawable/panel_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/panel_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/playlist_empty_title"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/empty_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:lineSpacingExtra="6dp"
+            android:text="@string/no_playlist_selected"
+            android:textColor="@color/text_secondary"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/choose_video_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/button_background"
+            android:text="@string/choose_videos"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/button_text_size" />
+
+        <Button
+            android:id="@+id/open_settings_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/button_background"
+            android:text="@string/open_settings"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/button_text_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/error_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/screen_horizontal_margin"
+        android:layout_marginEnd="@dimen/screen_horizontal_margin"
+        android:background="@drawable/panel_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/panel_padding"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/playback_failed"
+            android:textColor="@color/danger"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/error_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:textColor="@color/text_secondary"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/retry_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_background"
+            android:text="@string/retry"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/button_text_size" />
+
+        <Button
+            android:id="@+id/error_settings_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/button_background"
+            android:text="@string/open_settings"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/button_text_size" />
+    </LinearLayout>
+
+</merge>

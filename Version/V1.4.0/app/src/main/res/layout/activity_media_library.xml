@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/settings_horizontal_padding"
+    android:paddingTop="@dimen/settings_vertical_padding"
+    android:paddingRight="@dimen/settings_horizontal_padding"
+    android:paddingBottom="@dimen/settings_vertical_padding">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/media_library_title"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/media_library_description"
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/media_library_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/media_library_scanning"
+        android:textColor="@color/primary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/media_video_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:choiceMode="multipleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="6dp"
+        android:focusable="true"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="vertical" />
+
+    <Button
+        android:id="@+id/confirm_media_selection_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/button_background"
+        android:enabled="false"
+        android:text="@string/confirm_media_selection"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/button_text_size" />
+
+    <Button
+        android:id="@+id/refresh_media_library_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background"
+        android:text="@string/refresh_media_library"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/button_text_size" />
+
+    <Button
+        android:id="@+id/grant_media_permission_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background"
+        android:text="@string/grant_media_permission"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/button_text_size"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/cancel_media_library_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background"
+        android:text="@string/cancel"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/button_text_size" />
+
+</LinearLayout>
