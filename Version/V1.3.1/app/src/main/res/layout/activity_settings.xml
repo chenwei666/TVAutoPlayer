@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/settings_horizontal_padding"
+        android:paddingTop="@dimen/settings_vertical_padding"
+        android:paddingRight="@dimen/settings_horizontal_padding"
+        android:paddingBottom="@dimen/settings_vertical_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_title"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/selected_playlist_label"
+            android:textColor="@color/text_secondary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/selected_video_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:maxLines="10"
+            android:text="@string/not_selected"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/value_text_size" />
+
+        <Button
+            android:id="@+id/select_video_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_background"
+            android:text="@string/replace_playlist"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/button_text_size" />
+
+        <Button
+            android:id="@+id/append_video_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/button_background"
+            android:text="@string/append_videos"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/button_text_size" />
+
+        <Button
+            android:id="@+id/system_picker_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/button_background"
+            android:text="@string/system_picker_optional"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/button_text_size"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/auto_start_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_background"
+            android:buttonTint="@color/primary"
+            android:focusable="true"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/auto_start"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/button_text_size" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/auto_start_description"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/sound_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/button_background"
+            android:text="@string/sound_on"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/button_text_size" />
+
+        <Button
+            android:id="@+id/scale_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/button_background"
+            android:text="@string/scale_fit"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/button_text_size" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/scale_description"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/image_duration_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/button_background"
+            android:text="@string/image_duration_default"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/button_text_size" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/image_duration_description"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/clear_video_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/button_background"
+            android:text="@string/clear_playlist"
+            android:textColor="@color/danger"
+            android:textSize="@dimen/button_text_size" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/supported_formats_hint"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/remote_hint"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/back_to_player_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_background"
+            android:text="@string/back_to_player"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/button_text_size" />
+    </LinearLayout>
+
+</ScrollView>
