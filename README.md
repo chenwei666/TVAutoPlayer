@@ -1,134 +1,139 @@
-# 电视自动播放器 / TV Auto Player
+# TV Auto Player
 
-[![Android CI](https://github.com/chenwei666/TVAutoPlayer/actions/workflows/android.yml/badge.svg)](https://github.com/chenwei666/TVAutoPlayer/actions/workflows/android.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<p align="center">
+  <strong>让 Android TV 自动循环播放 U 盘或本机中的图片和视频。</strong>
+</p>
 
-[简体中文](#中文介绍) | [English](#english-introduction) | [完整英文说明 / Full English README](README_EN.md)
+<p align="center">
+  Offline image & video slideshow for Android TV, digital signage and unattended displays.
+</p>
 
-开发人员与维护者：[chenwei666](https://github.com/chenwei666)
+<p align="center">
+  <a href="https://github.com/chenwei666/TVAutoPlayer/releases/latest"><strong>下载最新版 APK</strong></a>
+  · <a href="README_EN.md">English</a>
+  · <a href="ROADMAP.md">Roadmap</a>
+  · <a href="https://github.com/chenwei666/TVAutoPlayer/issues">反馈问题</a>
+</p>
 
-## 中文介绍
+<p align="center">
+  <a href="https://github.com/chenwei666/TVAutoPlayer/actions/workflows/android.yml"><img src="https://github.com/chenwei666/TVAutoPlayer/actions/workflows/android.yml/badge.svg" alt="Android CI"></a>
+  <a href="https://github.com/chenwei666/TVAutoPlayer/releases/latest"><img src="https://img.shields.io/github/v/release/chenwei666/TVAutoPlayer?label=release" alt="Release"></a>
+  <img src="https://img.shields.io/badge/Android-6.0%2B-3DDC84?logo=android&logoColor=white" alt="Android 6+">
+  <img src="https://img.shields.io/badge/Privacy-Offline-success" alt="Offline and private">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
+</p>
 
-电视自动播放器是一款面向 Android TV、电视盒子和数字标牌场景的开源离线播放器。V1.4.0 支持根据电视系统语言自动切换中文或英文，并支持图片与视频混合轮播：静态图片按设置的停留时间自动切换，视频播放结束后自动切换；应用可扫描电视内部存储和已挂载 U 盘，无需依赖第三方文件选择器。播放列表、显示比例、声音和开机播放设置都会保存在本机，应用不联网、不上传媒体文件，也不收集用户数据。
+TV Auto Player 是一款面向 **Android TV、电视盒子、门店屏幕和数字标牌** 的开源离线播放器。选中图片和视频后即可按顺序无限循环；设备重启后可尝试自动恢复播放。
 
-## English Introduction
+应用不联网、不上传媒体、不收集用户数据，也不需要第三方文件选择器。播放列表和设置全部保存在设备本地。
 
-TV Auto Player is an open-source, offline digital-signage player for Android TV and TV boxes. V1.4.0 automatically follows the TV system language in Chinese or English and supports mixed image and video playlists: still images advance after a configurable duration, while videos advance when playback finishes. The app scans internal storage and mounted USB drives without requiring a third-party file picker. Playlists and playback preferences stay on the device; the app does not access the network, upload media, or collect user data.
+## 适合这些场景
 
-For complete English installation, compatibility, privacy, and build instructions, see [README_EN.md](README_EN.md).
+- 门店促销广告和电子菜单
+- 公司前台、展厅和会议室展示屏
+- 工厂看板与内部通知屏
+- 学校、医院和公共区域信息屏
+- 家庭电视照片与视频循环播放
+- 无网络或不允许上传媒体的离线环境
 
-## 已实现功能
+## 为什么选择 TV Auto Player？
 
-- 首次启动自动进入内置媒体库，可一次选择电视存储或 U 盘中的多张图片和多个视频。
-- 图片与视频可混合编排并按勾选顺序无限循环。
-- 图片停留时间支持 5、10、15、30、60 秒，默认 10 秒；视频仍按自身时长播放。
-- 无需电视安装“文件”“文档”或第三方文件管理器；可选的系统文件选择器仅在设备支持时显示。
-- 按 Android 版本申请最小照片/视频读取权限，扫描全部已挂载共享存储卷，不申请 `MANAGE_EXTERNAL_STORAGE`。
-- 多视频按选择顺序连续播放，最后一个播放完后从第一个继续循环。
-- 设置页支持“重新选择播放列表”和“追加视频”，追加时按 URI 自动去重。
-- 再次打开直接播放，无需重复选择；V1.0.0 的单视频设置会自动迁移。
-- 使用 Android `dp/sp` 和 `smallestWidth` 资源适配 720p、1080p、4K 等电视分辨率。
-- 支持遥控器方向键、确认键、返回键、菜单键和设置键。
-- 播放中按“返回 / 菜单 / 设置”进入功能设置。
-- 可更换/追加视频、清空播放列表、开关声音、切换完整显示/裁切铺满。
-- 保存播放列表；MediaStore 图片/视频使用系统媒体读取权限，系统选择器媒体继续保存跨重启 URI 授权。
-- 电视开机广播触发自动播放（默认开启，可在设置中关闭）。
-- 视频被移动、删除或授权失效时给出明确提示，不崩溃。
-- 播放失败时显示 Media3 错误码，并提供重试或更换视频。
-- 播放期间保持屏幕常亮、沉浸式全屏。
-- 不联网、不读取数据库、不收集用户数据。
+- **图片和视频混合轮播**：图片按设定时间切换，视频播放结束后自动进入下一项。
+- **直接扫描本机和 U 盘**：无需安装“文件”“文档”或第三方文件管理器。
+- **保存播放列表**：重新打开应用无需重复选择。
+- **面向电视遥控器设计**：支持方向键、确认、返回、菜单和设置键。
+- **开机播放**：监听标准开机与部分 Quick Boot 广播，并明确提示厂商系统限制。
+- **多分辨率适配**：适配常见 720p、1080p 和 4K 电视界面。
+- **离线与隐私优先**：不联网、不上传、不采集媒体内容或用户数据。
+- **中英文界面**：自动跟随电视系统语言。
 
-## 直接安装
+## 3 分钟开始使用
 
-推荐从 GitHub Releases 下载经过校验的 APK：
+1. 从 [GitHub Releases](https://github.com/chenwei666/TVAutoPlayer/releases/latest) 下载 APK。
+2. 将 APK 复制到 U 盘，在电视上安装并允许“安装未知应用”。
+3. 首次启动时授予照片和视频读取权限。
+4. 从电视内部存储或 U 盘中按希望的顺序勾选图片和视频。
+5. 选择“保存所选媒体并开始播放”。
+6. 播放中按遥控器返回键，可更换列表、追加媒体、调整图片时长、声音和显示比例。
 
-[下载 TVAutoPlayer v1.4.0](https://github.com/chenwei666/TVAutoPlayer/releases/tag/v1.4.0)
-
-方法一：把 APK 复制到 U 盘，在电视文件管理器中打开并允许“安装未知应用”。
-
-方法二：电视打开 USB/网络调试后，在电脑执行：
+也可以通过 ADB 安装：
 
 ```powershell
 adb install -r .\TVAutoPlayer-v1.4.0-debug.apk
 ```
 
-首次运行：
+当前稳定版：**V1.4.0**
 
-1. 打开“电视自动播放器”。
-2. 按提示授予“照片和视频”读取权限；Android 14+ 可选择允许全部媒体或仅允许指定媒体。
-3. 内置媒体库会扫描电视内部存储和已挂载 U 盘，用遥控器确认键按希望的播放顺序勾选图片与视频。
-4. 选择“保存所选媒体并开始播放”，应用会按勾选顺序循环播放。
-5. 播放中按遥控器“返回”键进入设置，可重新选择整个列表或继续追加视频。
-6. 如果列表为空，把视频放入 `Movies/TVAutoPlay`、图片放入 `Pictures/TVAutoPlay`，重新插入 U 盘并稍等片刻后执行“重新扫描”。
-7. 冷启动电视，验证厂商系统是否允许本应用自启动。
+> 当前 Release APK 使用 Android Debug 证书签名，适合测试、内网、展厅和门店侧载。正式批量部署前，请使用企业自己的 Release 证书构建并妥善保管签名密钥。
 
-> 交付 APK 使用 Android Debug 证书签名，适合内网、展厅、门店等直接侧载测试。正式批量部署前请使用企业自己的发布证书构建 Release APK，并妥善保管签名密钥。
+## 核心功能
+
+| 能力 | 说明 |
+|---|---|
+| 混合播放列表 | 图片与视频可混合编排，并按勾选顺序无限循环 |
+| 图片停留时间 | 支持 5、10、15、30、60 秒，默认 10 秒 |
+| 多存储扫描 | 扫描内部共享存储及已挂载 U 盘 |
+| 列表管理 | 重新选择、追加视频、URI 自动去重、清空列表 |
+| 显示模式 | 完整显示或裁切铺满 |
+| 本地记忆 | 保存播放列表、声音、比例和开机播放设置 |
+| 容错 | 媒体被移动、删除或授权失效时明确提示 |
+| 电视体验 | 遥控器操作、沉浸式全屏、播放期间保持屏幕常亮 |
+
+## 推荐媒体格式
+
+最高兼容组合：
+
+```text
+MP4 + H.264/AVC + AAC
+```
+
+- 图片：JPEG/JPG、PNG、WebP、BMP、HEIF/HEIC。
+- 视频容器：MP4、MKV、WebM、MPEG-TS 等。
+- H.265/HEVC、AV1、4K、高码率、10-bit 和特殊音频格式取决于电视硬件解码能力。
+- AVI 等老旧格式兼容性不稳定，建议转码为 MP4。
+- GIF 动图暂不支持；AVIF 需要 Android 14 及以上系统解码支持。
 
 ## 开机自动播放说明
 
-应用已声明 `RECEIVE_BOOT_COMPLETED` 并监听标准开机广播及部分电视盒子使用的 Quick Boot 广播。Android 10 以后限制后台直接拉起界面，部分品牌电视还会增加自己的自启动限制。因此第一次安装后请在电视系统设置中把本应用加入“允许自启动 / 后台运行 / 不受电池优化限制”名单。
+应用声明了 `RECEIVE_BOOT_COMPLETED`，并监听标准开机广播及部分电视盒子的 Quick Boot 广播。
 
-如果厂商系统仍然拦截，普通第三方 APK 无法无权限绕过。需要百分之百无人值守启动时，应把设备配置为企业 Device Owner / Kiosk，或由设备厂商把应用加入系统白名单。相关限制见 [Android 后台界面启动说明](https://developer.android.com/guide/components/activities/background-starts)。
+Android 10 以后限制后台直接启动界面，不少电视厂商还会增加自启动、电池优化或后台运行限制。第一次安装后，请在电视设置中将本应用加入：
 
-## 格式兼容性
+- 允许自启动
+- 允许后台运行
+- 不受电池优化限制
 
-播放器使用 Media3 ExoPlayer 1.10.1，内置媒体库显示 Android MediaStore 已识别且应用支持的图片和视频：
+普通第三方 APK 无法无权限绕过厂商限制。需要百分之百无人值守启动时，应使用企业 Device Owner / Kiosk 模式，或让设备厂商加入系统白名单。
 
-- 图片：JPEG/JPG、PNG、WebP、BMP、HEIF/HEIC；AVIF 仅 Android 14+ 解码，GIF 动图暂不支持。
-- 图片使用与视频相同的完整显示/裁切铺满规则，并按设置的停留时间切换。
-- 视频容器包括 MP4、MKV、WebM、MPEG-TS 等；容器能被识别不代表电视一定具备对应硬件解码器。
+## 隐私与权限
 
-- 推荐最高兼容组合：MP4 + H.264/AVC + AAC。
-- H.265/HEVC 需要电视芯片支持；老电视可能只有画面或无法播放。
-- AV1 主要适用于较新的电视芯片。
-- 4K、高码率、10-bit、特殊字幕或无损音频受电视硬件能力影响。
-- AVI 等老旧容器兼容性不稳定，建议先转码为 MP4。
+应用只申请开机广播和对应 Android 版本的照片、视频只读权限：
 
-## 开发环境与构建
+- Android 13+：`READ_MEDIA_IMAGES`、`READ_MEDIA_VIDEO`
+- Android 12 及以下：受版本上限约束的 `READ_EXTERNAL_STORAGE`
+- 不申请 `MANAGE_EXTERNAL_STORAGE`
+
+应用不会访问网络、上传或修改媒体文件，也不会收集用户数据。卸载应用不会删除原始图片和视频。
+
+## 开发与构建
 
 - JDK 17
 - Android SDK Platform 36
 - Android SDK Build Tools 36.0.0
 - Android Gradle Plugin 9.2.1
-- Gradle 9.4.1（已包含 Wrapper）
-- 最低系统 Android 6.0（API 23）
-- 目标系统 Android 16（API 36）
+- Gradle 9.4.1
+- 最低 Android 6.0（API 23）
+- 目标 Android 16（API 36）
 
-Android Studio 可直接打开项目。命令行构建：
+在 Windows 中运行：
 
 ```powershell
 .\scripts\build.ps1
 ```
 
-脚本会把源码同步到 `C:\tmp\TVAutoPlayer-build` 的英文临时路径，再依次运行单元测试、Lint 和 Debug APK 构建，最后把 APK 复制到 `dist`。这样可规避 Windows 下 Gradle 测试进程对中文项目路径的兼容问题。脚本只会清理自己固定的临时构建目录，不会删除项目源码。若需要改用其他英文目录，可先设置环境变量 `TV_AUTOPLAYER_BUILD_ROOT`。
+构建脚本会执行单元测试、Lint 和 Debug APK 构建。GitHub Actions 会在推送到 `main` 或提交 Pull Request 时运行质量门禁。
 
-GitHub Actions 会在推送到 `main` 或提交 Pull Request 时自动执行相同质量门禁，并上传 Debug APK 构建产物。
-
-## 项目结构
-
-```text
-app/src/main/java/...        混合媒体模型、图片时长、MediaStore 扫描、播放器与开机接收器
-app/src/main/res/            电视布局、样式、图标和中文文案
-app/src/test/                播放列表顺序、去重、启动与播放策略单元测试
-docs/                        架构、测试和部署说明
-scripts/build.ps1            Windows 可复现构建脚本
-README_EN.md                 完整英文项目说明
-dist/                        可安装 APK 与 SHA-256
-Version/V1.0.0/              V1.0.0 完整源码快照
-Version/V1.1.0/              V1.1.0 完整源码快照
-Version/V1.1.1/              V1.1.1 完整源码快照
-Version/V1.1.2/              V1.1.2 完整源码快照
-Version/V1.2.0/              V1.2.0 完整源码快照
-Version/V1.3.0/              V1.3.0 完整源码快照
-Version/V1.3.1/              V1.3.1 完整源码快照
-Version/V1.4.0/              V1.4.0 完整源码快照
-```
-
-## 隐私与权限
-
-应用申请 `RECEIVE_BOOT_COMPLETED` 和 Android 版本对应的照片/视频只读权限：Android 13+ 使用 `READ_MEDIA_IMAGES` 与 `READ_MEDIA_VIDEO`，Android 14+ 同时兼容用户仅授权部分媒体，Android 12 及以下使用受版本上限约束的 `READ_EXTERNAL_STORAGE`。应用只通过 MediaStore 枚举系统已索引的媒体，不申请整盘管理权限、不复制或修改原文件、不访问网络、不连接数据库，也不记录文件名或 URI 到业务日志。应用只保存播放列表的 URI、显示名称、媒体类型、顺序、图片时长和非敏感播放偏好；卸载应用不会删除原文件。
-
-更多信息：
+## 文档
 
 - [架构说明](docs/architecture.md)
 - [测试说明](docs/testing.md)
@@ -136,7 +141,21 @@ Version/V1.4.0/              V1.4.0 完整源码快照
 - [变更记录](CHANGELOG.md)
 - [贡献指南](CONTRIBUTING.md)
 - [安全策略](SECURITY.md)
+- [项目路线图](ROADMAP.md)
 
-## 开源许可证
+## 参与项目
 
-本项目采用 [MIT License](LICENSE) 开源。欢迎 Fork、改进和用于符合许可证要求的个人或商业场景。
+特别欢迎以下贡献：
+
+- 提交电视品牌、型号、Android 版本和 USB 存储兼容结果
+- 提交真实门店、展厅、菜单屏等使用场景
+- 改进电视遥控器体验和媒体格式兼容性
+- 补充其他语言翻译
+- 提交可复现的 Bug 与脱敏日志
+- 如果项目帮到了你，请点一个 **Star**，让更多需要离线电视轮播的人找到它
+
+## 许可证
+
+本项目采用 [MIT License](LICENSE)。欢迎 Fork、改进，以及在符合许可证要求的个人或商业场景中使用。
+
+维护者：[chenwei666](https://github.com/chenwei666)
